@@ -79,10 +79,17 @@ void MainMenu::Update(sf::RenderWindow* window)
 				mainState.setState(new mainGame());
 				break;
 
+			case 2:
+				mainState.setState(new OptionsMenu());
+				break;
+
 			case 3:
 				gameExit = true;
+				break;
 			}
 		}
+
+		clock.restart();
 	}
 }
 

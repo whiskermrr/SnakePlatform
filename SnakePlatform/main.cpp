@@ -12,6 +12,9 @@ int scores = 0;
 int N = screenResolution.x / blockSize;;
 int M = screenResolution.y / blockSize;;
 float FPS = 20.0f;
+bool isTeleportsOn = false;
+bool isMusicOn = true;
+bool isSoundFxOn = true;
 
 int main()
 {
@@ -50,6 +53,13 @@ int main()
 			
 		if (gameExit)
 		{
+			mainState.Destroy();
+			window.close();
+		}
+
+		if (gameOver)
+		{
+			//here will be change to another state
 			mainState.Destroy();
 			window.close();
 		}

@@ -1,6 +1,7 @@
 #pragma once
 #include "state.h"
 #include "gameState.h"
+#include "OptionsMenu.h"
 
 class MainMenu : public State
 {
@@ -24,7 +25,7 @@ private:
 	int selected = 1;
 	bool upKey = false;
 	bool downKey = true;
-	float KEY_FPS = 5.0f;
+	float KEY_FPS = 8.0f;
 };
 
 extern gameState mainState;
