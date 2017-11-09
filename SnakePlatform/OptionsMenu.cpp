@@ -2,8 +2,9 @@
 
 
 
-OptionsMenu::OptionsMenu()
+OptionsMenu::OptionsMenu(ConfigManager* configManager)
 {
+	this->configManager = configManager;
 }
 
 void OptionsMenu::Initiate(sf::RenderWindow* window)
@@ -65,10 +66,25 @@ void OptionsMenu::setTextStrings()
 	std::string teleports = isTeleportsOn ? "ON" : "OFF";
 	std::string music = isMusicOn ? "ON" : "OFF";
 	std::string soundFx = isSoundFxOn ? "ON" : "OFF";
+	std::string difficulty = "";
+
+	switch (selectedDifficulty)
+	{
+	case 1:
+		difficulty = "EASY";
+		break;
+	case 2:
+		difficulty = "NORMAL";
+		break;
+	case 3:
+		difficulty = "HARD";
+		break;
+	}
 
 	tTeleports.setString("Teleports: " + teleports);
 	tMusic.setString("Music: " + music);
 	tSoundFX.setString("SoundFX: " + soundFx);
+	tDifficulty.setString("Difficulty: " + difficulty);
 }
 
 void OptionsMenu::updateMenuFunctionalityAndSetProperColors()
@@ -114,8 +130,17 @@ void OptionsMenu::getInput()
 		switch (selected)
 		{
 		case 1:
-			if (selectedDifficulty != 3)
-				selectedDifficulty++;
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+			{
+				if (selectedDifficulty != 3)
+					selectedDifficulty++;
+			}
+			else
+			{
+				if (selectedDifficulty != 1)
+					selectedDifficulty--;
+			}
+				
 			break;
 
 		case 2:

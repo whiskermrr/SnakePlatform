@@ -76,9 +76,13 @@ void Snake::checkCollisionWithFood()
 		scores++;
 		snakeSize++;
 		setRandomPositionOfFood();
-		body[0].x = rand() % N;
-		body[0].y = rand() % M;
-		direction = rand() % 4;
+
+		if (isTeleportsOn)
+		{
+			body[0].x = rand() % N;
+			body[0].y = rand() % M;
+			direction = rand() % 4;
+		}
 	}
 }
 

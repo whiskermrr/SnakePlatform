@@ -7,7 +7,7 @@
 class OptionsMenu : public State
 {
 public:
-	OptionsMenu();
+	OptionsMenu(ConfigManager* configManager);
 	void Initiate(sf::RenderWindow* window);
 	void Update(sf::RenderWindow* window);
 	void Render(sf::RenderWindow* window);
@@ -33,11 +33,13 @@ private:
 	int selectedSoundFX = 1;
 	bool upKey = false;
 	bool downKey = true;
-	float KEY_FPS = 8.0f;
+
+	ConfigManager* configManager;
 };
 
 extern bool isMusicOn;
 extern bool isSoundFxOn;
 extern bool isTeleportsOn;
 extern gameState mainState;
+extern float KEY_FPS;
 

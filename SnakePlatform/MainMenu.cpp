@@ -8,6 +8,11 @@ MainMenu::MainMenu()
 
 void MainMenu::Initiate(sf::RenderWindow* window)
 {
+	this->configManager = new ConfigManager();
+
+	configManager->setFileName("config/config.cfg");
+	configManager->loadConfigFile();
+
 	font.loadFromFile("resources/font2.ttf");
 	tTitle.setFont(font);
 	tTitle.setCharacterSize(titleSize);
@@ -80,7 +85,7 @@ void MainMenu::Update(sf::RenderWindow* window)
 				break;
 
 			case 2:
-				mainState.setState(new OptionsMenu());
+				mainState.setState(new OptionsMenu(this->configManager));
 				break;
 
 			case 3:

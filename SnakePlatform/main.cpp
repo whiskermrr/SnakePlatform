@@ -12,9 +12,11 @@ int scores = 0;
 int N = screenResolution.x / blockSize;;
 int M = screenResolution.y / blockSize;;
 float FPS = 20.0f;
+float KEY_FPS = 8.0f;
 bool isTeleportsOn = false;
 bool isMusicOn = true;
 bool isSoundFxOn = true;
+int globalDifficulty = 1;
 
 int main()
 {

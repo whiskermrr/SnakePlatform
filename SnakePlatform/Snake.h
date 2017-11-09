@@ -47,6 +47,7 @@ extern int scores;
 extern int blockSize;
 extern int N;
 extern int M;
+extern bool isTeleportsOn;
 
 #endif // !SNAKE_H
 
