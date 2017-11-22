@@ -23,6 +23,7 @@ void mainGame::Update(sf::RenderWindow* window)
 {
 	snake->getInput();
 	snake->Update();
+	food.Update();
 
 	if (snake->body[0].x == food.getPosition().x / blockSize && snake->body[0].y == food.getPosition().y / blockSize)
 	{
