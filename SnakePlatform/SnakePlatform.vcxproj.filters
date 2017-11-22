@@ -54,6 +54,9 @@
     <ClCompile Include="ConfigManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VertexMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainMenu.h">
@@ -78,6 +81,9 @@
       <Filter>Header Files\menu</Filter>
     </ClInclude>
     <ClInclude Include="ConfigManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

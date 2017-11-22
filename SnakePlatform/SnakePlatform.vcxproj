@@ -124,6 +124,7 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="OptionsMenu.cpp" />
     <ClCompile Include="Snake.cpp" />
+    <ClCompile Include="VertexMap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConfigManager.h" />
@@ -134,6 +135,7 @@
     <ClInclude Include="OptionsMenu.h" />
     <ClInclude Include="Snake.h" />
     <ClInclude Include="state.h" />
+    <ClInclude Include="VertexMap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
