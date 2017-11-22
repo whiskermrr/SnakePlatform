@@ -2,6 +2,8 @@
 #include "state.h"
 #include "Snake.h"
 #include "Map.h"
+#include "VertexMap.h"
+#include "Food.h"
 
 
 class mainGame :
@@ -19,6 +21,8 @@ private:
 
 	Snake* snake;
 	Map map;
+	VertexMap vertexMap;
+	Food food;
 };
 
 extern std::string backgroundFileName;

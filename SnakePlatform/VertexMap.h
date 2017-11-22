@@ -27,6 +27,6 @@ private:
 };
 
 extern sf::Vector2i screenResolution;
-extern unsigned int blockSize;
+extern int blockSize;
 
 

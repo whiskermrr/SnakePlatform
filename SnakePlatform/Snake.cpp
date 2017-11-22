@@ -6,37 +6,19 @@ Snake::Snake()
 	snakeSize = 3;
 	direction = DOWN;
 	texture.loadFromFile("resources/snake.png");
-	foodTexture.loadFromFile("resources/teleport.png");
 	this->setTexture(texture);
-	food.setTexture(foodTexture);
 
 	for (int i = 0; i <= snakeSize; i++)
 	{
 		body[i].x = 10;
 		body[i].y = 10 - i;
 	}
-
-	setRandomPositionOfFood();
-}
-
-void Snake::setRandomPositionOfFood()
-{
-	srand(time(NULL));
-	int x = rand() % N;
-	int y = rand() % M;
-
-	for (int i = 0; i <= snakeSize; i++)
-		if (body[i].x == x && body[i].y == y)
-			setRandomPositionOfFood();
-
-	food.setPosition(sf::Vector2f(x * blockSize, y * blockSize));
 }
 
 void Snake::Update()
 {
 	checkCollisionWithBorders();
 	updateBody();
-	checkCollisionWithFood();
 	checkCollisionWithItself();
 }
 
@@ -75,23 +57,6 @@ void Snake::updateBody()
 	}
 }
 
-void Snake::checkCollisionWithFood()
-{
-	if (body[0].x == food.getPosition().x / blockSize && body[0].y == food.getPosition().y / blockSize)
-	{
-		scores++;
-		snakeSize++;
-		setRandomPositionOfFood();
-
-		if (isTeleportsOn)
-		{
-			body[0].x = rand() % N;
-			body[0].y = rand() % M;
-			direction = rand() % 4;
-		}
-	}
-}
-
 void Snake::incrementSnakeSize()
 {
 	snakeSize += 1;
@@ -104,8 +69,6 @@ void Snake::Render(sf::RenderWindow* window)
 		setPosition(body[i].x * blockSize, body[i].y * blockSize);
 		window->draw(*this);
 	}
-
-	window->draw(this->food);
 }
 
 void Snake::getInput()

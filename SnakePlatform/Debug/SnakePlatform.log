@@ -1,7 +1,35 @@
-﻿  Snake.cpp
+﻿  VertexMap.cpp
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\vertexmap.cpp(27): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\vertexmap.cpp(36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\vertexmap.cpp(37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\vertexmap.cpp(38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\vertexmap.cpp(39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Snake.cpp
 c:\users\mrr\source\repos\snakeplatform\snakeplatform\snake.cpp(5): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\mrr\source\repos\snakeplatform\snakeplatform\snake.cpp(24): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\mrr\source\repos\snakeplatform\snakeplatform\snake.cpp(32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\mrr\source\repos\snakeplatform\snakeplatform\snake.cpp(104): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\snake.cpp(69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  mainGame.cpp
+  Food.cpp
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\food.cpp(13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\food.cpp(17): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  Compiling...
+  OptionsMenu.cpp
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\optionsmenu.cpp(15): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\optionsmenu.cpp(16): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\optionsmenu.cpp(21): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\optionsmenu.cpp(22): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\optionsmenu.cpp(26): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\optionsmenu.cpp(27): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\optionsmenu.cpp(31): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\optionsmenu.cpp(32): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\optionsmenu.cpp(36): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\optionsmenu.cpp(37): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  MainMenu.cpp
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\mainmenu.cpp(20): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\mainmenu.cpp(27): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\mainmenu.cpp(34): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\mainmenu.cpp(41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  main.cpp
+  Generating Code...
   SnakePlatform.vcxproj -> C:\Users\Mrr\source\repos\SnakePlatform\Debug\SnakePlatform.exe
   SnakePlatform.vcxproj -> C:\Users\Mrr\source\repos\SnakePlatform\Debug\SnakePlatform.pdb (Partial PDB)

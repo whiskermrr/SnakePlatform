@@ -22,10 +22,8 @@ public:
 	void Update();
 	void getInput();
 	void incrementSnakeSize();
-	void setRandomPositionOfFood();
 	void Render(sf::RenderWindow* window);
 	void checkCollisionWithBorders();
-	void checkCollisionWithFood();
 	void checkCollisionWithItself();
 	void updateBody();
 	~Snake();
@@ -33,12 +31,11 @@ public:
 public:
 	int direction;
 	snakeBody body[100];
-	sf::Sprite food;
 	int snakeSize;
 	sf::Texture texture;
-	sf::Texture foodTexture;
 
 	bool pause = false;
+	bool isOnPill = false;
 
 };
 
