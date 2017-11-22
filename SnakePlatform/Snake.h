@@ -25,6 +25,8 @@ public:
 	void Render(sf::RenderWindow* window);
 	void checkCollisionWithBorders();
 	void checkCollisionWithItself();
+	void setIsOnPill(bool isOnPill);
+	bool isOnPill();
 	void updateBody();
 	~Snake();
 
@@ -35,7 +37,7 @@ public:
 	sf::Texture texture;
 
 	bool pause = false;
-	bool isOnPill = false;
+	bool _isOnPill = false;
 
 };
 

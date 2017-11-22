@@ -83,6 +83,16 @@ void Snake::getInput()
 		direction = RIGHT;
 }
 
+void Snake::setIsOnPill(bool isOnPill)
+{
+	_isOnPill = isOnPill;
+}
+
+bool Snake::isOnPill()
+{
+	return _isOnPill;
+}
+
 Snake::~Snake()
 {
 }

@@ -10,7 +10,11 @@ void mainGame::Initiate(sf::RenderWindow* window)
 
 void mainGame::Render(sf::RenderWindow* window)
 {
-	window->draw(map);
+	if (snake->isOnPill())
+		vertexMap.Update(window);
+	else
+		window->draw(map);
+
 	snake->Render(window);
 	window->draw(food);
 }
@@ -25,6 +29,8 @@ void mainGame::Update(sf::RenderWindow* window)
 		scores++;
 		snake->incrementSnakeSize();
 		food.setRandomPosition();
+		snake->setIsOnPill(true);
+		vertexMap.startEffect(sf::Vector2i(snake->body[0].x * blockSize, snake->body[0].y * blockSize));
 
 		if (isTeleportsOn)
 		{
