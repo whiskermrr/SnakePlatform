@@ -21,9 +21,15 @@ Snake::Snake()
 
 void Snake::setRandomPositionOfFood()
 {
+	srand(time(NULL));
 	int x = rand() % N;
 	int y = rand() % M;
-	food.setPosition(x * blockSize, y * blockSize);
+
+	for (int i = 0; i <= snakeSize; i++)
+		if (body[i].x == x && body[i].y == y)
+			setRandomPositionOfFood();
+
+	food.setPosition(sf::Vector2f(x * blockSize, y * blockSize));
 }
 
 void Snake::Update()

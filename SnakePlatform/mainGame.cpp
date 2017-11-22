@@ -4,12 +4,12 @@
 void mainGame::Initiate(sf::RenderWindow* window)
 {
 	snake = new Snake();
-	map = new Map();
+	map.Load(backgroundFileName);
 }
 
 void mainGame::Render(sf::RenderWindow* window)
 {
-	map->Render(window);
+	window->draw(map);
 	snake->Render(window);
 }
 
@@ -22,12 +22,9 @@ void mainGame::Update(sf::RenderWindow* window)
 void mainGame::Destroy(sf::RenderWindow* window)
 {
 	delete snake;
-	delete map;
-	map = NULL;
 	snake = NULL;
 }
 
 void mainGame::Reset(sf::RenderWindow* window)
 {
-	
 }

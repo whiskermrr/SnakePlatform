@@ -1,24 +1,26 @@
-#ifndef MAP_H
-#define MAP_H
-
+#pragma once
 #include <SFML/Graphics.hpp>
+#include <string>
 
-class Map
+class Map : public sf::Drawable, public sf::Transformable
 {
 public:
 	Map();
-	void Render(sf::RenderWindow* window);
 	~Map();
+	bool Load(std::string& fileName);
 
 private:
-	sf::Texture texutre;
-	sf::Sprite tile;
-	int N;
-	int M;
+	virtual void Map::draw(sf::RenderTarget& target, sf::RenderStates states) const
+	{
+		states.transform *= getTransform();
+		states.texture = &texture;
+		target.draw(vertexes, states);
+	}
+
+	sf::VertexArray vertexes;
+	sf::Texture texture;
 };
 
 extern sf::Vector2i screenResolution;
 extern int blockSize;
-
-#endif // !MAP_H
 

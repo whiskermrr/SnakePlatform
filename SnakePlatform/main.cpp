@@ -17,6 +17,7 @@ bool isTeleportsOn = false;
 bool isMusicOn = true;
 bool isSoundFxOn = true;
 int globalDifficulty = 1;
+std::string backgroundFileName = "resources/background.png";
 
 int main()
 {

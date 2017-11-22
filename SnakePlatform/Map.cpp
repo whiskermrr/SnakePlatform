@@ -1,26 +1,42 @@
 #include "Map.h"
-
-
+#include <stdlib.h>
 
 Map::Map()
 {
-	texutre.loadFromFile("resources/background.png");
-	tile.setTexture(texutre);
-	N = screenResolution.x / blockSize;
-	M = screenResolution.y / blockSize;
+
 }
 
-
-void Map::Render(sf::RenderWindow* window)
+bool Map::Load(std::string& fileName)
 {
-	for (int i = 0; i < N; i++)
+	if (!texture.loadFromFile(fileName))
+		return false;
+
+	vertexes.setPrimitiveType(sf::Quads);
+	int width = screenResolution.x / blockSize;
+	int height = screenResolution.y / blockSize;
+	vertexes.resize(width * height * 4);
+
+	srand(time(NULL));
+
+	for (int i = 0; i < width; i++)
 	{
-		for (int j = 0; j < M; j++)
+		for (int j = 0; j < height; j++)
 		{
-			tile.setPosition(i * blockSize, j * blockSize);
-			window->draw(tile);
+			sf::Vertex* vertex = &vertexes[(i + j * width) * 4];
+
+			vertex[0].position = sf::Vector2f(i * blockSize, j * blockSize);
+			vertex[1].position = sf::Vector2f((i + 1) * blockSize, j * blockSize);
+			vertex[2].position = sf::Vector2f((i + 1) * blockSize, (j + 1) * blockSize);
+			vertex[3].position = sf::Vector2f(i * blockSize, (j + 1) * blockSize);
+
+			vertex[0].texCoords = sf::Vector2f(0, 0);
+			vertex[1].texCoords = sf::Vector2f(blockSize, 0);
+			vertex[2].texCoords = sf::Vector2f(blockSize, blockSize);
+			vertex[3].texCoords = sf::Vector2f(0, blockSize);
 		}
 	}
+
+	return true;
 }
 
 Map::~Map()

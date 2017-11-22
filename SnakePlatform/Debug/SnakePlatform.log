@@ -1,3 +1,7 @@
-﻿  ConfigManager.cpp
+﻿  Snake.cpp
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\snake.cpp(5): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\snake.cpp(24): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\snake.cpp(32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\mrr\source\repos\snakeplatform\snakeplatform\snake.cpp(104): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   SnakePlatform.vcxproj -> C:\Users\Mrr\source\repos\SnakePlatform\Debug\SnakePlatform.exe
   SnakePlatform.vcxproj -> C:\Users\Mrr\source\repos\SnakePlatform\Debug\SnakePlatform.pdb (Partial PDB)

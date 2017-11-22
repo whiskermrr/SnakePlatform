@@ -18,7 +18,7 @@ public:
 private:
 
 	Snake* snake;
-	Map* map;
+	Map map;
 };
 
-extern int sizeOfBlock;
+extern std::string backgroundFileName;

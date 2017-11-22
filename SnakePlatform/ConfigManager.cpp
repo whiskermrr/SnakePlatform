@@ -4,6 +4,7 @@
 
 ConfigManager::ConfigManager()
 {
+	fileName = "config/config.cfg";
 }
 
 
