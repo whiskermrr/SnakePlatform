@@ -68,7 +68,7 @@ void OptionsMenu::setTextStrings()
 	std::string soundFx = isSoundFxOn ? "ON" : "OFF";
 	std::string difficulty = "";
 
-	switch (selectedDifficulty)
+	switch (globalDifficulty)
 	{
 	case 1:
 		difficulty = "EASY";
@@ -132,13 +132,13 @@ void OptionsMenu::getInput()
 		case 1:
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 			{
-				if (selectedDifficulty != 3)
-					selectedDifficulty++;
+				if (globalDifficulty != 3)
+					globalDifficulty++;
 			}
 			else
 			{
-				if (selectedDifficulty != 1)
-					selectedDifficulty--;
+				if (globalDifficulty != 1)
+					globalDifficulty--;
 			}
 				
 			break;
@@ -161,7 +161,16 @@ void OptionsMenu::getInput()
 	}
 
 	if (selected == 5 && sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
+	{
+		saveSettings();
 		mainState.setState(new MainMenu());
+	}
+}
+
+void OptionsMenu::saveSettings()
+{
+	if (!configManager->saveConfig())
+		std::cout << "ERROR!" << std::endl;
 }
 
 void OptionsMenu::Render(sf::RenderWindow* window)

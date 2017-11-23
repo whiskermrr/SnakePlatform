@@ -2,6 +2,7 @@
 #include <string>
 #include <sys/stat.h>
 #include <fstream>
+#include <iostream>
 
 
 class ConfigManager
@@ -17,6 +18,7 @@ public:
 	bool createNewConfigFile();
 	bool fileExists();
 	void setFileName(std::string fileName);
+	bool saveConfig();
 
 
 private:

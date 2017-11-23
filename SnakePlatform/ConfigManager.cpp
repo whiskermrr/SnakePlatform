@@ -187,3 +187,31 @@ void ConfigManager::setFileName(std::string fileName)
 {
 	this->fileName = fileName;
 }
+
+bool ConfigManager::saveConfig()
+{
+	std::fstream file;
+	file.open(fileName.c_str(), std::ofstream::out | std::ofstream::trunc);
+
+	if (!file.good())
+		return false;
+	
+	std::string diff;
+
+	if (globalDifficulty == 1)		diff = easyDifficulty;
+	else if (globalDifficulty == 2)	diff = normalDifficulty;
+	else if (globalDifficulty == 3)	diff = hardDifficulty;
+
+	std::cout << soundFX << " " << (isSoundFxOn ? flagOn : flagOff) << std::endl;
+	std::cout << music << " " << (isMusicOn ? flagOn : flagOff) << std::endl;
+	std::cout << teleports << " " << (isTeleportsOn ? flagOn : flagOff) << std::endl;
+	std::cout << difficulty << " " << diff << std::endl;
+
+	file << soundFX << " " << (isSoundFxOn ? flagOn : flagOff) << std::endl;
+	file << music << " " << (isMusicOn ? flagOn : flagOff) << std::endl;
+	file << teleports << " " << (isTeleportsOn ? flagOn : flagOff) << std::endl;
+	file << difficulty << " " << diff << std::endl;
+	file.close();
+
+	return true;
+}

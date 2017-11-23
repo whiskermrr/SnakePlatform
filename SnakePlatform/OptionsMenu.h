@@ -16,6 +16,7 @@ public:
 	void setTextColorsWhite();
 	void setTextStrings();
 	void updateMenuFunctionalityAndSetProperColors();
+	void saveSettings();
 
 private:
 	sf::Font font;
@@ -28,9 +29,6 @@ private:
 
 	int textSize = 30;
 	int selected = 1;
-	int selectedDifficulty = 2;
-	int selectedMusic = 1;
-	int selectedSoundFX = 1;
 	bool upKey = false;
 	bool downKey = true;
 
