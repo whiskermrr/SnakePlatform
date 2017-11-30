@@ -10,15 +10,17 @@ class mainGame :
 	public State
 {
 public:
-	
-	void Initiate(sf::RenderWindow* window);
-	void Update(sf::RenderWindow* window);
-	void Render(sf::RenderWindow* window);
-	void Destroy(sf::RenderWindow* window);
-	void Reset(sf::RenderWindow* window);
+	mainGame(sf::RenderWindow* window);
+	void Initiate();
+	void Update();
+	void Render();
+	void Destroy();
+	void Reset();
+	~mainGame();
 
 private:
 
+	sf::RenderWindow* window;
 	Snake* snake;
 	Map map;
 	VertexMap vertexMap;

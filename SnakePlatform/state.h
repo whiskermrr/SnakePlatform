@@ -7,19 +7,19 @@ class State
 {
 public:
 	
-	virtual void Initiate(sf::RenderWindow* window)
+	virtual void Initiate()
 	{
 	}
 
-	virtual void Update(sf::RenderWindow* window)
+	virtual void Update()
 	{
 	}
 
-	virtual void Render(sf::RenderWindow* window)
+	virtual void Render()
 	{
 	}
 
-	virtual void Destroy(sf::RenderWindow* window)
+	virtual void Destroy()
 	{
 	}
 };

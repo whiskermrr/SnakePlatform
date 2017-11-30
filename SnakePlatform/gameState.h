@@ -16,7 +16,7 @@ public:
 	{
 		if (this->state != NULL)
 		{
-			this->state->Update(this->window);
+			this->state->Update();
 		}
 	}
 
@@ -24,7 +24,30 @@ public:
 	{
 		if (this->state != NULL)
 		{
-			this->state->Render(this->window);
+			this->state->Render();
+		}
+	}
+
+	void setState(State* state)
+	{
+		if (this->state != NULL)
+		{
+			this->state->Destroy();
+		}
+
+		this->state = state;
+
+		if (this->state != NULL)
+		{
+			this->state->Initiate();
+		}
+	}
+
+	void Destroy()
+	{
+		if (this->state != NULL)
+		{
+			this->state->Destroy();
 		}
 	}
 
@@ -33,34 +56,16 @@ public:
 		this->window = window;
 	}
 
-	void setState(State* state)
+	sf::RenderWindow* getWindow()
 	{
-		if (this->state != NULL)
-		{
-			this->state->Destroy(this->window);
-		}
-
-		this->state = state;
-
-		if (this->state != NULL)
-		{
-			this->state->Initiate(this->window);
-		}
-	}
-
-	void Destroy()
-	{
-		if (this->state != NULL)
-		{
-			this->state->Destroy(this->window);
-		}
+		return this->window;
 	}
 
 	~gameState()
 	{
 		if (this->state != NULL)
 		{
-			this->state->Destroy(this->window);
+			this->state->Destroy();
 		}
 	}
 

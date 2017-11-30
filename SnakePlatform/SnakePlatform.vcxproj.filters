@@ -60,6 +60,12 @@
     <ClCompile Include="Food.cpp">
       <Filter>Source Files\entities</Filter>
     </ClCompile>
+    <ClCompile Include="SnakeBase.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="SnakeConsole.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainMenu.h">
@@ -90,6 +96,12 @@
       <Filter>Header Files\entities</Filter>
     </ClInclude>
     <ClInclude Include="Food.h">
+      <Filter>Header Files\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakeBase.h">
+      <Filter>Header Files\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakeConsole.h">
       <Filter>Header Files\entities</Filter>
     </ClInclude>
   </ItemGroup>

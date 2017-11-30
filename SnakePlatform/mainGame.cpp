@@ -1,14 +1,19 @@
 #include "mainGame.h"
 
 
-void mainGame::Initiate(sf::RenderWindow* window)
+mainGame::mainGame(sf::RenderWindow* window)
+{
+	this->window = window;
+}
+
+void mainGame::Initiate()
 {
 	snake = new Snake();
 	map.Load(backgroundFileName);
 	food.setRandomPosition();
 }
 
-void mainGame::Render(sf::RenderWindow* window)
+void mainGame::Render()
 {
 	if (snake->isOnPill())
 		vertexMap.Update(window);
@@ -19,7 +24,7 @@ void mainGame::Render(sf::RenderWindow* window)
 	window->draw(food);
 }
 
-void mainGame::Update(sf::RenderWindow* window)
+void mainGame::Update()
 {
 	snake->getInput();
 	snake->Update();
@@ -42,12 +47,17 @@ void mainGame::Update(sf::RenderWindow* window)
 	}
 }
 
-void mainGame::Destroy(sf::RenderWindow* window)
+void mainGame::Destroy()
 {
 	delete snake;
 	snake = NULL;
 }
 
-void mainGame::Reset(sf::RenderWindow* window)
+void mainGame::Reset()
 {
+}
+
+mainGame::~mainGame()
+{
+
 }

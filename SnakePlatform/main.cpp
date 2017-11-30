@@ -24,7 +24,7 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(screenResolution.x, screenResolution.y), "Snak3");
 
 	mainState.setWindow(&window);
-	mainState.setState(new MainMenu());
+	mainState.setState(new MainMenu(&window));
 	sf::Clock clock;
 
 
@@ -36,7 +36,7 @@ int main()
 			if (event.type == sf::Event::Closed)
 			{
 				window.close();
-			}	
+			}
 		}
 
 		if (clock.getElapsedTime().asSeconds() >= 1.0f / FPS)
