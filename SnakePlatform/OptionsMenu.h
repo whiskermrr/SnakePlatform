@@ -7,11 +7,11 @@
 class OptionsMenu : public State
 {
 public:
-	OptionsMenu(ConfigManager* configManager);
-	void Initiate(sf::RenderWindow* window);
-	void Update(sf::RenderWindow* window);
-	void Render(sf::RenderWindow* window);
-	void Destroy(sf::RenderWindow* window);
+	OptionsMenu(sf::RenderWindow* window, ConfigManager* configManager);
+	void Initiate();
+	void Update();
+	void Render();
+	void Destroy();
 	void getInput();
 	void setTextColorsWhite();
 	void setTextStrings();
@@ -33,6 +33,7 @@ private:
 	bool downKey = true;
 
 	ConfigManager* configManager;
+	sf::RenderWindow* window;
 };
 
 extern bool isMusicOn;

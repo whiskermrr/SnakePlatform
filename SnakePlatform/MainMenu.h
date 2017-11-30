@@ -7,11 +7,11 @@
 class MainMenu : public State
 {
 public:
-	MainMenu();
-	void Initiate(sf::RenderWindow* window);
-	void Update(sf::RenderWindow* window);
-	void Render(sf::RenderWindow* window);
-	void Destroy(sf::RenderWindow* window);
+	MainMenu(sf::RenderWindow* window);
+	void Initiate();
+	void Update();
+	void Render();
+	void Destroy();
 
 private:
 	sf::Font font;
@@ -28,6 +28,7 @@ private:
 	bool downKey = true;
 
 	ConfigManager* configManager;
+	sf::RenderWindow* window;
 };
 
 extern gameState mainState;

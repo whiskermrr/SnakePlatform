@@ -2,11 +2,12 @@
 
 
 
-MainMenu::MainMenu()
+MainMenu::MainMenu(sf::RenderWindow* window)
 {
+	this->window = window;
 }
 
-void MainMenu::Initiate(sf::RenderWindow* window)
+void MainMenu::Initiate()
 {
 	this->configManager = new ConfigManager();
 
@@ -43,7 +44,7 @@ void MainMenu::Initiate(sf::RenderWindow* window)
 	tQuit.setFillColor(sf::Color::White);
 }
 
-void MainMenu::Update(sf::RenderWindow* window)
+void MainMenu::Update()
 {
 	if (clock.getElapsedTime().asSeconds() >= 1.0f / KEY_FPS)
 	{
@@ -81,11 +82,11 @@ void MainMenu::Update(sf::RenderWindow* window)
 			switch (selected)
 			{
 			case 1:
-				mainState.setState(new mainGame());
+				mainState.setState(new mainGame(this->window));
 				break;
 
 			case 2:
-				mainState.setState(new OptionsMenu(this->configManager));
+				mainState.setState(new OptionsMenu(this->window, this->configManager));
 				break;
 
 			case 3:
@@ -98,7 +99,7 @@ void MainMenu::Update(sf::RenderWindow* window)
 	}
 }
 
-void MainMenu::Render(sf::RenderWindow* window)
+void MainMenu::Render()
 {
 	window->draw(tTitle);
 	window->draw(tPlay);
@@ -106,7 +107,7 @@ void MainMenu::Render(sf::RenderWindow* window)
 	window->draw(tQuit);
 }
 
-void MainMenu::Destroy(sf::RenderWindow* window)
+void MainMenu::Destroy()
 {
 
 }

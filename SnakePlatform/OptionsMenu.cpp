@@ -2,12 +2,13 @@
 
 
 
-OptionsMenu::OptionsMenu(ConfigManager* configManager)
+OptionsMenu::OptionsMenu(sf::RenderWindow* window, ConfigManager* configManager)
 {
+	this->window = window;
 	this->configManager = configManager;
 }
 
-void OptionsMenu::Initiate(sf::RenderWindow* window)
+void OptionsMenu::Initiate()
 {
 	font.loadFromFile("resources/font2.ttf");
 	tDifficulty.setFont(font);
@@ -40,7 +41,7 @@ void OptionsMenu::Initiate(sf::RenderWindow* window)
 	setTextStrings();
 }
 
-void OptionsMenu::Update(sf::RenderWindow* window)
+void OptionsMenu::Update()
 {
 	if (clock.getElapsedTime().asSeconds() >= 1.0f / KEY_FPS)
 	{
@@ -163,7 +164,7 @@ void OptionsMenu::getInput()
 	if (selected == 5 && sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
 	{
 		saveSettings();
-		mainState.setState(new MainMenu());
+		mainState.setState(new MainMenu(this->window));
 	}
 }
 
@@ -173,7 +174,7 @@ void OptionsMenu::saveSettings()
 		std::cout << "ERROR!" << std::endl;
 }
 
-void OptionsMenu::Render(sf::RenderWindow* window)
+void OptionsMenu::Render()
 {
 	window->draw(tDifficulty);
 	window->draw(tTeleports);
@@ -182,7 +183,7 @@ void OptionsMenu::Render(sf::RenderWindow* window)
 	window->draw(tBack);
 }
 
-void OptionsMenu::Destroy(sf::RenderWindow* window)
+void OptionsMenu::Destroy()
 {
 
 }
