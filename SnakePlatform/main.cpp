@@ -36,7 +36,7 @@ int main()
 			if (event.type == sf::Event::Closed)
 			{
 				window.close();
-			}	
+			}
 		}
 
 		if (clock.getElapsedTime().asSeconds() >= 1.0f / FPS)
