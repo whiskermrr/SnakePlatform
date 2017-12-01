@@ -1,6 +1,7 @@
 #include "gameState.h"
 #include "mainGame.h"
 #include "MainMenu.h"
+#include "consoleGame.h"
 
 
 sf::Vector2i screenResolution(640, 480);
@@ -24,7 +25,7 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(screenResolution.x, screenResolution.y), "Snak3");
 
 	mainState.setWindow(&window);
-	mainState.setState(new MainMenu(&window));
+	mainState.setState(new consoleGame());
 	sf::Clock clock;
 
 

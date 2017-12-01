@@ -66,6 +66,9 @@
     <ClCompile Include="SnakeConsole.cpp">
       <Filter>Source Files\entities</Filter>
     </ClCompile>
+    <ClCompile Include="consoleGame.cpp">
+      <Filter>Source Files\states</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainMenu.h">
@@ -103,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="SnakeConsole.h">
       <Filter>Header Files\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="consoleGame.h">
+      <Filter>Header Files\states</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

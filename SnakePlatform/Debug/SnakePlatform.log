@@ -1,2 +1,4 @@
-﻿LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+﻿  consoleGame.cpp
+d:\libraries\pdcurs34\curses.h(153): warning C4005: 'MOUSE_MOVED': macro redefinition
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\um\wincon.h(123): note: see previous definition of 'MOUSE_MOVED'
   SnakePlatform.vcxproj -> C:\Users\Mrr\source\repos\SnakePlatform\Debug\SnakePlatform.exe
