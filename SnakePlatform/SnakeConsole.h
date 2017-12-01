@@ -6,7 +6,7 @@
 class SnakeConsole : public SnakeBase
 {
 public:
-	SnakeConsole(WINDOW * window);
+	SnakeConsole(WINDOW * window, unsigned int width, unsigned int height);
 	void getInput();
 	void Render();
 	void Update();
@@ -16,5 +16,6 @@ public:
 public:
 	WINDOW* window;
 	char texture;
+	
 };
 

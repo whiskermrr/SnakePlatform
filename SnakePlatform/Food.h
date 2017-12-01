@@ -5,7 +5,7 @@
 class Food : public sf::Sprite
 {
 public:
-	Food();
+	Food(unsigned int blockSize, unsigned int width, unsigned int height);
 	void setRandomPosition();
 	void Update();
 	~Food();
@@ -13,9 +13,8 @@ public:
 private:
 	sf::Texture texture;
 	sf::Vector2i source;
+	unsigned int blockSize;
+	unsigned int width;
+	unsigned int height;
 };
-
-extern int blockSize;
-extern int N;
-extern int M;
 

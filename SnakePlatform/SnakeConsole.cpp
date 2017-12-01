@@ -2,9 +2,11 @@
 
 
 
-SnakeConsole::SnakeConsole(WINDOW* window)
+SnakeConsole::SnakeConsole(WINDOW* window, unsigned int width, unsigned int height) : SnakeBase(width, height)
 {
 	this->window = window;
+	this->width = width;
+	this->height = height;
 	snakeSize = 3;
 	direction = DOWN;
 	texture = 'x';

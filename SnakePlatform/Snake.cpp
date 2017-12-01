@@ -1,10 +1,14 @@
 #include "Snake.h"
 
-Snake::Snake()
+
+Snake::Snake(unsigned int blockSize, unsigned int width, unsigned int height) : SnakeBase(width, height)
 {
 	srand(time(NULL));
 	texture.loadFromFile("resources/snake.png");
 	this->setTexture(texture);
+	this->blockSize = blockSize;
+	this->width = width;
+	this->height = height;
 
 	for (int i = 0; i <= snakeSize; i++)
 	{

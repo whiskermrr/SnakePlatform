@@ -16,6 +16,7 @@ class SnakeBase
 {
 public:
 	SnakeBase();
+	SnakeBase(unsigned int width, unsigned int height);
 	void Update();
 	virtual void getInput();
 	void incrementSnakeSize();
@@ -23,6 +24,10 @@ public:
 	void checkCollisionWithItself();
 	void setIsOnPill(bool isOnPill);
 	bool isOnPill();
+	bool isDead();
+	void setIsDead(bool dead);
+	void setScores(int scores);
+	int getScores();
 	void updateBody();
 	~SnakeBase();
 
@@ -31,14 +36,15 @@ public:
 	snakeBody body[100];
 	int snakeSize;
 
+	unsigned int width;
+	unsigned int height;
+	unsigned int scores;
+
 	bool pause = false;
 	bool _isOnPill = false;
+	bool _isDead = false;
 };
 
-extern bool gameOver;
-extern int scores;
-extern int blockSize;
-extern int N;
-extern int M;
+
 extern bool isTeleportsOn;
 

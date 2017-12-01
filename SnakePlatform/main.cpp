@@ -4,28 +4,30 @@
 #include "consoleGame.h"
 
 
-sf::Vector2i screenResolution(640, 480);
-gameState mainState;
-bool gameExit;
-bool gameOver;
-int blockSize = 16;
-int scores = 0;
-int N = screenResolution.x / blockSize;
-int M = screenResolution.y / blockSize;
-float FPS = 20.0f;
-float KEY_FPS = 8.0f;
-bool isTeleportsOn = false;
-bool isMusicOn = true;
-bool isSoundFxOn = true;
-int globalDifficulty = 1;
-std::string backgroundFileName = "resources/background.png";
+	sf::Vector2i screenResolution(640, 480);
+	gameState mainState;
+	bool gameExit;
+	bool gameOver = false;
+	unsigned int blockSize = 16;
+	int scores = 0;
+	int N = screenResolution.x / blockSize;
+	int M = screenResolution.y / blockSize;
+	float FPS = 20.0f;
+	float KEY_FPS = 8.0f;
+	bool isTeleportsOn = false;
+	bool isMusicOn = true;
+	bool isSoundFxOn = true;
+	int globalDifficulty = 1;
+	std::string backgroundFileName = "resources/background.png";
+
 
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(screenResolution.x, screenResolution.y), "Snak3");
 
 	mainState.setWindow(&window);
-	mainState.setState(new consoleGame());
+	//mainState.setState(new consoleGame(N, M));
+	mainState.setState(new MainMenu(&window));
 	sf::Clock clock;
 
 

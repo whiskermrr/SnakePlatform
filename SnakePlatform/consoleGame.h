@@ -6,7 +6,7 @@
 class consoleGame : public State
 {
 public:
-	consoleGame();
+	consoleGame(unsigned int width, unsigned int height);
 	void Initiate();
 	void Update();
 	void Render();
@@ -17,8 +17,7 @@ public:
 public:
 	SnakeConsole* snake;
 	WINDOW* window;
+	unsigned int width;
+	unsigned int height;
 };
-
-extern int N;
-extern int M;
 

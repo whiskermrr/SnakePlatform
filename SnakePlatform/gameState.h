@@ -74,6 +74,3 @@ private:
 	sf::RenderWindow* window;
 	State* state;
 };
-
-extern gameState mainState;
-extern bool gameExit;

@@ -7,7 +7,7 @@ class Map : public sf::Drawable, public sf::Transformable
 public:
 	Map();
 	~Map();
-	bool Load(std::string& fileName);
+	bool Load(std::string& fileName, unsigned int width, unsigned int height, unsigned int blockSize);
 
 private:
 	virtual void Map::draw(sf::RenderTarget& target, sf::RenderStates states) const
@@ -20,7 +20,4 @@ private:
 	sf::VertexArray vertexes;
 	sf::Texture texture;
 };
-
-extern sf::Vector2i screenResolution;
-extern int blockSize;
 

@@ -3,17 +3,14 @@
 
 Map::Map()
 {
-
 }
 
-bool Map::Load(std::string& fileName)
+bool Map::Load(std::string& fileName, unsigned int width, unsigned int height, unsigned int blockSize)
 {
 	if (!texture.loadFromFile(fileName))
 		return false;
 
 	vertexes.setPrimitiveType(sf::Quads);
-	int width = screenResolution.x / blockSize;
-	int height = screenResolution.y / blockSize;
 	vertexes.resize(width * height * 4);
 
 	srand(time(NULL));

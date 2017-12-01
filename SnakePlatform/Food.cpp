@@ -2,8 +2,11 @@
 
 
 
-Food::Food()
+Food::Food(unsigned int blockSize, unsigned int width, unsigned int height)
 {
+	this->blockSize = blockSize;
+	this->width = width;
+	this->height = height;
 	texture.loadFromFile("resources/teleports_extended.png");
 	setTexture(texture);
 	source.x = 0;
@@ -14,8 +17,8 @@ Food::Food()
 void Food::setRandomPosition()
 {
 	srand(time(NULL));
-	int x = rand() % N;
-	int y = rand() % M;
+	int x = rand() % width;
+	int y = rand() % height;
 
 	setPosition(sf::Vector2f(x * blockSize, y * blockSize));
 }

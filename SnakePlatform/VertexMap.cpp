@@ -2,11 +2,12 @@
 
 
 
-VertexMap::VertexMap()
+VertexMap::VertexMap(unsigned int width, unsigned int height, unsigned int blockSize)
 {
 	vertexes.setPrimitiveType(sf::LinesStrip);
-	width = screenResolution.x / blockSize;
-	height = screenResolution.y / blockSize;
+	this->blockSize = blockSize;
+	this->width = width;
+	this->height = height;
 	vertexes.resize(4);
 
 	north = height / 2;

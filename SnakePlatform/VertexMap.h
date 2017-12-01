@@ -7,7 +7,7 @@
 class VertexMap
 {
 public:
-	VertexMap();
+	VertexMap(unsigned int width, unsigned int height, unsigned int blockSize);
 	~VertexMap();
 	void Update(sf::RenderWindow* window);
 	void startEffect(sf::Vector2i mouseCoords);
@@ -15,6 +15,7 @@ public:
 private:
 
 	sf::VertexArray vertexes;
+	unsigned int blockSize;
 	int width = 0;
 	int height = 0;
 	int west;
@@ -25,8 +26,5 @@ private:
 	sf::Color colors[7];
 	bool isEffectOn;
 };
-
-extern sf::Vector2i screenResolution;
-extern int blockSize;
 
 

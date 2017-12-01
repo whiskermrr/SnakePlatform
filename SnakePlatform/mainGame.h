@@ -23,8 +23,15 @@ private:
 	sf::RenderWindow* window;
 	Snake* snake;
 	Map map;
-	VertexMap vertexMap;
-	Food food;
+	VertexMap* vertexMap;
+	Food* food;
+
+	//unsigned int blockSize;
+	unsigned int width;
+	unsigned int height;
 };
 
 extern std::string backgroundFileName;
+extern bool isTeleportsOn;
+extern unsigned int blockSize;
+extern bool gameOver;
