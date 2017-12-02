@@ -7,8 +7,6 @@ Snake::Snake(unsigned int blockSize, unsigned int width, unsigned int height) : 
 	texture.loadFromFile("resources/snake.png");
 	this->setTexture(texture);
 	this->blockSize = blockSize;
-	this->width = width;
-	this->height = height;
 
 	for (int i = 0; i <= snakeSize; i++)
 	{

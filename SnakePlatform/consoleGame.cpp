@@ -22,8 +22,6 @@ consoleGame::consoleGame(unsigned int width, unsigned int height)
 
 void consoleGame::Initiate()
 {
-	
-
 	snake = new SnakeConsole(window, width, height);
 }
 

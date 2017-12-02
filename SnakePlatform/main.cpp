@@ -26,8 +26,8 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(screenResolution.x, screenResolution.y), "Snak3");
 
 	mainState.setWindow(&window);
-	//mainState.setState(new consoleGame(N, M));
-	mainState.setState(new MainMenu(&window));
+	mainState.setState(new consoleGame(N, M));
+	//mainState.setState(new MainMenu(&window));
 	sf::Clock clock;
 
 
