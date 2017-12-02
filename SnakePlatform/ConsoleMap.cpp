@@ -11,14 +11,14 @@ void ConsoleMap::Render(WINDOW* window, unsigned int width, unsigned int height,
 {
 	for (int i = startWindowY - 1; i <= height + startWindowY; i++)
 	{
-		mvprintw(i, startWindowX - 1, "#");
-		mvprintw(i, startWindowX + width, "#");
+		mvaddch(i, startWindowX - 1, textureBorder);
+		mvaddch(i, startWindowX + width, textureBorder);
 	}
 
 	for (int i = startWindowX - 1; i <= width + startWindowX; i++)
 	{
-		mvprintw(startWindowY - 1, i, "#");
-		mvprintw(startWindowY + height, i, "#");
+		mvaddch(startWindowY - 1, i, textureBorder);
+		mvaddch(startWindowY + height, i, textureBorder);
 	}
 
 	refresh();

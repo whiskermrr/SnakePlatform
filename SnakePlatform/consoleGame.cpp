@@ -13,7 +13,7 @@ consoleGame::consoleGame(unsigned int width, unsigned int height)
 	this->width = width * 2;
 	this->height = height;
 
-	window = newwin(height, width * 2, 5, 20);
+	window = newwin(height, width * 2, startWindowY, startWindowX);
 	keypad(window, true);
 	refresh();
 	wrefresh(window);
@@ -22,7 +22,7 @@ consoleGame::consoleGame(unsigned int width, unsigned int height)
 void consoleGame::Initiate()
 {
 	snake = new SnakeConsole(window, width, height);
-	map.Render(window, width, height, 20, 5);
+	map.Render(window, width, height, startWindowX, startWindowY);
 }
 
 void consoleGame::Update()

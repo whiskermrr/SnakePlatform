@@ -8,5 +8,8 @@ public:
 	ConsoleMap();
 	void Render(WINDOW* window, unsigned int width, unsigned int height, unsigned int startWindowX, unsigned int startWindowY);
 	~ConsoleMap();
+
+public:
+	char textureBorder = (int)215;
 };
 

@@ -21,5 +21,7 @@ public:
 	ConsoleMap map;
 	unsigned int width;
 	unsigned int height;
+	unsigned int startWindowX = 20;
+	unsigned int startWindowY = 5;
 };
 
