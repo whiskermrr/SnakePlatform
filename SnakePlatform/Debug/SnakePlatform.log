@@ -1,9 +1,2 @@
-﻿  ConsoleMap.cpp
-c:\users\mrr\source\repos\snakeplatform\snakeplatform\consolemap.h(13): warning C4309: 'initializing': truncation of constant value
-c:\users\mrr\source\repos\snakeplatform\snakeplatform\consolemap.cpp(12): warning C4018: '<=': signed/unsigned mismatch
-c:\users\mrr\source\repos\snakeplatform\snakeplatform\consolemap.cpp(18): warning C4018: '<=': signed/unsigned mismatch
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  main.cpp
-  consoleGame.cpp
+﻿  SnakeConsole.cpp
   SnakePlatform.vcxproj -> C:\Users\Mrr\source\repos\SnakePlatform\Debug\SnakePlatform.exe

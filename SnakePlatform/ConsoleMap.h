@@ -10,6 +10,6 @@ public:
 	~ConsoleMap();
 
 public:
-	char textureBorder = (int)215;
+	char textureBorder = 97;
 };
 
