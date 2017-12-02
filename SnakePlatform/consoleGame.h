@@ -16,6 +16,7 @@ public:
 	void Reset();
 	void setRandomPositionOfFood();
 	void printScores();
+	void showGameOver();
 	~consoleGame();
 
 public:

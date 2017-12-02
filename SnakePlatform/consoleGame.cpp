@@ -40,6 +40,7 @@ void consoleGame::Initiate()
 void consoleGame::Update()
 {
 	snake->getInput();
+	flushinp();
 	snake->Update();
 
 	if (snake->body[0].x == food.x && snake->body[0].y == food.y)
@@ -51,7 +52,9 @@ void consoleGame::Update()
 	}
 
 	if (snake->isDead())
-		gameOver = true;
+	{
+		showGameOver();
+	}
 }
 
 void consoleGame::Render()
@@ -84,6 +87,22 @@ void consoleGame::printScores()
 	std::string scores = "Total Score: " + std::to_string(snake->getScores());
 	mvprintw(startWindowY - 3, startWindowX, scores.c_str());
 	refresh();
+}
+
+void consoleGame::showGameOver()
+{
+	init_pair(1, COLOR_GREEN, COLOR_BLACK);
+
+	std::string sOver = "GAME OVER!";
+	wattron(window, COLOR_PAIR(1));
+	mvwprintw(window, height / 2, width / 2 - sOver.size() / 2, sOver.c_str());
+	wattroff(window, COLOR_PAIR(1));
+	wrefresh(window);
+
+	halfdelay(100);
+	getch();
+
+	gameOver = true;
 }
 
 consoleGame::~consoleGame()
