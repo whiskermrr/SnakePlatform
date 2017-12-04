@@ -7,7 +7,7 @@ SnakeBase::SnakeBase()
 
 SnakeBase::SnakeBase(unsigned int width, unsigned int height)
 {
-	snakeSize = 3;
+	snakeSize = 5;
 	direction = DOWN;
 	this->scores = 0;
 	this->width = width;

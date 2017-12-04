@@ -5,17 +5,7 @@
 SnakeConsole::SnakeConsole(WINDOW* window, unsigned int width, unsigned int height) : SnakeBase(width, height)
 {
 	this->window = window;
-	this->width = width;
-	this->height = height;
-	snakeSize = 3;
-	direction = DOWN;
 	texture = 'x';
-
-	for (int i = 0; i <= snakeSize; i++)
-	{
-		body[i].x = 10;
-		body[i].y = 10 - i;
-	}
 }
 
 void SnakeConsole::Update()
@@ -29,6 +19,7 @@ void SnakeConsole::Update()
 void SnakeConsole::updateBody()
 {
 	mvwaddch(window, body[snakeSize].y, body[snakeSize].x, ' ');
+	mvwaddch(window, body[snakeSize].y - 1, body[snakeSize].x, ' ');
 	SnakeBase::updateBody();
 }
 
@@ -45,7 +36,7 @@ void SnakeConsole::getInput()
 	int key = wgetch(window);
 
 	if (key == 119 && direction != DOWN)		direction = UP;
-	else if (key == 115 && direction != UP)	direction = DOWN;
+	else if (key == 115 && direction != UP)		direction = DOWN;
 	else if (key == 97 && direction != RIGHT)	direction = LEFT;
 	else if (key == 100 && direction != LEFT)	direction = RIGHT;
 }

@@ -2,31 +2,15 @@
 
 
 
-consoleGame::consoleGame(unsigned int width, unsigned int height)
+consoleGame::consoleGame(WINDOW* window, unsigned int width, unsigned int height)
 {
-	initscr();
-	cbreak();
-	noecho();
-	curs_set(0);
-	halfdelay(1);
-
-	if (!has_colors())
-	{
-		printw("Terminal does not support colours.");
-		getch();
-		gameOver = true;
-	}
-
-	start_color();
-
-	this->width = width * 2;
+	this->window = window;
+	this->width = width;
 	this->height = height;
-
-	window = newwin(height, width * 2, startWindowY, startWindowX);
-	keypad(window, true);
-	refresh();
-	wrefresh(window);
+	wclear(window);
 	srand(time(NULL));
+
+	
 }
 
 void consoleGame::Initiate()

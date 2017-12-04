@@ -1,5 +1,6 @@
-﻿  consoleGame.cpp
-d:\libraries\pdcurs34\curses.h(153): warning C4005: 'MOUSE_MOVED': macro redefinition
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\um\wincon.h(123): note: see previous definition of 'MOUSE_MOVED'
-c:\users\mrr\source\repos\snakeplatform\snakeplatform\consolegame.cpp(29): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  SnakeConsole.cpp
+  ConsoleMenu.cpp
+c:\program files (x86)\windows kits\10\include\10.0.15063.0\um\wincon.h(123): warning C4005: 'MOUSE_MOVED': macro redefinition
+  d:\libraries\pdcurs34\curses.h(153): note: see previous definition of 'MOUSE_MOVED'
+  Generating Code...
   SnakePlatform.vcxproj -> C:\Users\Mrr\source\repos\SnakePlatform\Debug\SnakePlatform.exe

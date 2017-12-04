@@ -8,7 +8,7 @@
 class consoleGame : public State
 {
 public:
-	consoleGame(unsigned int width, unsigned int height);
+	consoleGame(WINDOW* window, unsigned int width, unsigned int height);
 	void Initiate();
 	void Update();
 	void Render();

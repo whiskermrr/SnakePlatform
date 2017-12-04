@@ -70,7 +70,10 @@
       <Filter>Source Files\states</Filter>
     </ClCompile>
     <ClCompile Include="ConsoleMap.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleMenu.cpp">
+      <Filter>Source Files\menu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -114,7 +117,10 @@
       <Filter>Header Files\states</Filter>
     </ClInclude>
     <ClInclude Include="ConsoleMap.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleMenu.h">
+      <Filter>Header Files\menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
