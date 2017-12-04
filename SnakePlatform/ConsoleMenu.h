@@ -4,6 +4,7 @@
 #include "ConfigManager.h"
 #include "consoleGame.h"
 #include "gameState.h"
+#include "ConsoleOptionsMenu.h"
 
 
 class ConsoleMenu : public State

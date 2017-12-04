@@ -87,8 +87,8 @@ void consoleGame::showGameOver()
 
 	halfdelay(100);
 	getch();
-
-	gameOver = true;
+	endwin();
+	mainState.setState(new ConsoleMenu(width / 2, height));
 }
 
 consoleGame::~consoleGame()

@@ -69,7 +69,7 @@ void SnakeBase::updateBody()
 
 void SnakeBase::incrementSnakeSize()
 {
-	snakeSize += 1;
+	snakeSize += 10;
 }
 
 void SnakeBase::setIsOnPill(bool isOnPill)

@@ -43,12 +43,12 @@ void ConsoleMenu::Update()
 
 	switch (choice)
 	{
-	case KEY_UP:
+	case 119:
 		if (choice != 0)
 			highlight--;
 		break;
 
-	case KEY_DOWN:
+	case 115:
 		if (choice != 2)
 			highlight++;
 		break;
@@ -61,6 +61,7 @@ void ConsoleMenu::Update()
 			break;
 
 		case 1:
+			mainState.setState(new ConsoleOptionsMenu(configManager, window, width, height, startWindowX, startWindowY));
 			break;
 
 		case 2:

@@ -75,6 +75,9 @@
     <ClCompile Include="ConsoleMenu.cpp">
       <Filter>Source Files\menu</Filter>
     </ClCompile>
+    <ClCompile Include="ConsoleOptionsMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainMenu.h">
@@ -121,6 +124,9 @@
     </ClInclude>
     <ClInclude Include="ConsoleMenu.h">
       <Filter>Header Files\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleOptionsMenu.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

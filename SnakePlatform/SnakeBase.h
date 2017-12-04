@@ -33,7 +33,7 @@ public:
 
 public:
 	int direction;
-	snakeBody body[100];
+	snakeBody body[400];
 	int snakeSize;
 
 	unsigned int width;

@@ -1,8 +1,10 @@
 #pragma once
+#include <stdlib.h>
 #include "state.h"
 #include "SnakeConsole.h"
 #include "ConsoleMap.h"
-#include <stdlib.h>
+#include "ConsoleMenu.h"
+#include "gameState.h"
 
 
 class consoleGame : public State
@@ -31,6 +33,6 @@ public:
 	char textureFood = '@';
 };
 
-
+extern gameState mainState;
 extern bool gameOver;
 
