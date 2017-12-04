@@ -2,10 +2,12 @@
 
 
 
-consoleGame::consoleGame(WINDOW* window, unsigned int width, unsigned int height)
+consoleGame::consoleGame(WINDOW* window, unsigned int width, unsigned int height, unsigned int startWindowX, unsigned int startWindowY)
 {
 	this->window = window;
 	this->width = width;
+	this->startWindowX = startWindowX;
+	this->startWindowY = startWindowY;
 	this->height = height;
 	wclear(window);
 	srand(time(NULL));

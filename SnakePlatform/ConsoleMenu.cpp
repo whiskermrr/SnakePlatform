@@ -57,7 +57,17 @@ void ConsoleMenu::Update()
 		switch (highlight)
 		{
 		case 0:
-			mainState.setState(new consoleGame(this->window, this->width, this->height));
+			mainState.setState(new consoleGame(window, width, height, startWindowX, startWindowY));
+			break;
+
+		case 1:
+			break;
+
+		case 2:
+			gameOver = true;
+			break;
+
+		default:
 			break;
 		}
 

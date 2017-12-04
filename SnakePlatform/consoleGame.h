@@ -8,7 +8,7 @@
 class consoleGame : public State
 {
 public:
-	consoleGame(WINDOW* window, unsigned int width, unsigned int height);
+	consoleGame(WINDOW* window, unsigned int width, unsigned int height, unsigned int startWindowX, unsigned int startWindowY);
 	void Initiate();
 	void Update();
 	void Render();
@@ -26,8 +26,8 @@ public:
 	snakeBody food;
 	unsigned int width;
 	unsigned int height;
-	unsigned int startWindowX = 20;
-	unsigned int startWindowY = 5;
+	unsigned int startWindowX;
+	unsigned int startWindowY;
 	char textureFood = '@';
 };
 
