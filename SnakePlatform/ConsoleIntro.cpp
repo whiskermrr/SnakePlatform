@@ -96,12 +96,6 @@ void ConsoleIntro::RenderLogo()
 	}
 }
 
-
-void ConsoleIntro::DestroyLogo(int x, int y)
-{
-	mvaddch(startWindowY + y, startWindowX + x, ' ');
-}
-
 void ConsoleIntro::FlickerLogo()
 {
 	attron(COLOR_PAIR(flicker));

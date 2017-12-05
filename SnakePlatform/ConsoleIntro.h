@@ -12,7 +12,6 @@ public:
 	void Update();
 	void Render();
 	void RenderLogo();
-	void DestroyLogo(int x, int y);
 	void FlickerLogo();
 	void SimulateTyping();
 	void Destroy();
