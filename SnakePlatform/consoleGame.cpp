@@ -78,13 +78,14 @@ void consoleGame::printScores()
 void consoleGame::showGameOver()
 {
 	init_pair(1, COLOR_GREEN, COLOR_BLACK);
-
 	std::string sOver = "GAME OVER!";
+
 	wattron(window, COLOR_PAIR(1));
 	mvwprintw(window, height / 2, width / 2 - sOver.size() / 2, sOver.c_str());
 	wattroff(window, COLOR_PAIR(1));
 	wrefresh(window);
-
+	Sleep(1000);
+	flushinp();
 	halfdelay(100);
 	getch();
 	endwin();

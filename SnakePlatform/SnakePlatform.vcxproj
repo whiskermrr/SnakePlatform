@@ -83,7 +83,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>D:\Libraries\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>SFML_DYNAMIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SFML_DYNAMIC;_MBCS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClCompile Include="ConfigManager.cpp" />
     <ClCompile Include="consoleGame.cpp" />
+    <ClCompile Include="ConsoleIntro.cpp" />
     <ClCompile Include="ConsoleMap.cpp" />
     <ClCompile Include="ConsoleMenu.cpp" />
     <ClCompile Include="ConsoleOptionsMenu.cpp" />
@@ -148,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="ConfigManager.h" />
     <ClInclude Include="consoleGame.h" />
+    <ClInclude Include="ConsoleIntro.h" />
     <ClInclude Include="ConsoleMap.h" />
     <ClInclude Include="ConsoleMenu.h" />
     <ClInclude Include="ConsoleOptionsMenu.h" />
