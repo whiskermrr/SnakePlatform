@@ -1,6 +1,4 @@
-﻿  SnakeConsole.cpp
-  SnakeBase.cpp
+﻿  SnakeBase.cpp
 c:\users\mrr\source\repos\snakeplatform\snakeplatform\snakebase.cpp(48): warning C4018: '>=': signed/unsigned mismatch
 c:\users\mrr\source\repos\snakeplatform\snakeplatform\snakebase.cpp(52): warning C4018: '>=': signed/unsigned mismatch
-  Generating Code...
   SnakePlatform.vcxproj -> C:\Users\Mrr\source\repos\SnakePlatform\Debug\SnakePlatform.exe

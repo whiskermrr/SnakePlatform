@@ -55,16 +55,16 @@ void SnakeBase::checkCollisionWithBorders()
 
 void SnakeBase::updateBody()
 {
+	if (direction == RIGHT) body[0].x += 1;
+	if (direction == DOWN) body[0].y += 1;
+	if (direction == LEFT) body[0].x -= 1;
+	if (direction == UP) body[0].y -= 1;
+
 	for (int i = snakeSize; i > 0; i--)
 	{
 		body[i].x = body[i - 1].x;
 		body[i].y = body[i - 1].y;
 	}
-
-	if (direction == RIGHT) body[0].x += 1;
-	if (direction == DOWN) body[0].y += 1;
-	if (direction == LEFT) body[0].x -= 1;
-	if (direction == UP) body[0].y -= 1;
 }
 
 void SnakeBase::incrementSnakeSize(int incrementer)

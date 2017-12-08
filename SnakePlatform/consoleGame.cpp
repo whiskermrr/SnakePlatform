@@ -37,6 +37,7 @@ void consoleGame::Update()
 		printScores();
 	}
 
+
 	if (snake->isDead())
 	{
 		showGameOver();

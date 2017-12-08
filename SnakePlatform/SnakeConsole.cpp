@@ -19,7 +19,7 @@ void SnakeConsole::Update()
 void SnakeConsole::updateBody()
 {
 	mvwaddch(window, body[snakeSize].y, body[snakeSize].x, ' ');
-	//mvwaddch(window, body[snakeSize].y - 1, body[snakeSize].x, ' ');
+	mvwaddch(window, body[snakeSize].y - 1, body[snakeSize].x, ' ');
 	SnakeBase::updateBody();
 }
 
