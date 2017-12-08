@@ -41,7 +41,7 @@ void mainGame::Update()
 	if (snake->body[0].x == food->getPosition().x / blockSize && snake->body[0].y == food->getPosition().y / blockSize)
 	{
 		snake->scores++;
-		snake->incrementSnakeSize();
+		snake->incrementSnakeSize(5 * globalDifficulty);
 		food->setRandomPosition();
 		snake->setIsOnPill(true);
 		vertexMap->startEffect(sf::Vector2i(snake->body[0].x * blockSize, snake->body[0].y * blockSize));

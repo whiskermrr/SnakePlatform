@@ -24,12 +24,12 @@ void ConsoleOptionsMenu::Update()
 	switch (choice)
 	{
 	case 119:
-		if (choice != 0)
+		if (highlight != 0)
 			highlight--;
 		break;
 
 	case 115:
-		if (choice != 4)
+		if (highlight != 4)
 			highlight++;
 		break;
 
@@ -89,16 +89,16 @@ void ConsoleOptionsMenu::Render()
 
 	for (int i = 0; i < 5; i++)
 	{
-		mvwprintw(window, i + 1, 1, "                      ");
+		mvwprintw(window, i + 1 + startWindowY, 1, "                      ");
 
 		if (i == highlight)
 		{
 			wattron(window, A_REVERSE);
-			mvwprintw(window, i + 1, 1, (choices[i] + settings[i]).c_str());
+			mvwprintw(window, i + 1 + startWindowY, 1, (choices[i] + settings[i]).c_str());
 			wattroff(window, A_REVERSE);
 		}
 		else
-			mvwprintw(window, i + 1, 1, (choices[i] + settings[i]).c_str());
+			mvwprintw(window, i + 1 + startWindowY, 1, (choices[i] + settings[i]).c_str());
 	}
 
 	wrefresh(window);

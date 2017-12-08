@@ -34,4 +34,5 @@ private:
 extern std::string backgroundFileName;
 extern bool isTeleportsOn;
 extern unsigned int blockSize;
+extern int globalDifficulty;
 extern bool gameOver;

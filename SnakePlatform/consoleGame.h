@@ -34,5 +34,7 @@ public:
 };
 
 extern gameState mainState;
+extern bool isTeleportsOn;
+extern int globalDifficulty;
 extern bool gameOver;
 

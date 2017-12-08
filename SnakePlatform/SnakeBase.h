@@ -19,7 +19,7 @@ public:
 	SnakeBase(unsigned int width, unsigned int height);
 	void Update();
 	virtual void getInput();
-	void incrementSnakeSize();
+	void incrementSnakeSize(int incrementer);
 	void checkCollisionWithBorders();
 	void checkCollisionWithItself();
 	void setIsOnPill(bool isOnPill);

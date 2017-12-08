@@ -15,6 +15,7 @@ public:
 	void Update();
 	void Render();
 	void Destroy();
+	void RenderLogo();
 	~ConsoleMenu();
 
 public:
@@ -29,6 +30,9 @@ public:
 	unsigned int height;
 	unsigned int startWindowX = 20;
 	unsigned int startWindowY = 5;
+	char* logo;
+	unsigned int rows;
+	unsigned int columns;
 	
 };
 extern gameState mainState;

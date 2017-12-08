@@ -31,7 +31,7 @@ void consoleGame::Update()
 
 	if (snake->body[0].x == food.x && snake->body[0].y == food.y)
 	{
-		snake->incrementSnakeSize();
+		snake->incrementSnakeSize(5 * globalDifficulty);
 		snake->scores++;
 		setRandomPositionOfFood();
 		printScores();

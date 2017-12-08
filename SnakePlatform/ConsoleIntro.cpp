@@ -148,7 +148,6 @@ void ConsoleIntro::SimulateTyping()
 
 void ConsoleIntro::Destroy()
 {
-	clear();
 	delete[] logo;
 	endwin();
 }

@@ -5,6 +5,7 @@
 ConsoleMenu::ConsoleMenu(unsigned int width, unsigned int height)
 {
 	initscr();
+	clear();
 	cbreak();
 	noecho();
 	curs_set(0);
@@ -35,6 +36,33 @@ void ConsoleMenu::Initiate()
 
 	configManager->setFileName("config/config.cfg");
 	configManager->loadConfigFile();
+
+	std::fstream file("resources/snak3_logo_2.txt");
+	rows = 0;
+	std::string buffer = "";
+
+	if (!file.good())
+	{
+		file.close();
+		std::cout << "ERROR!";
+		Sleep(1000);
+		mainState.setState(new ConsoleMenu(width / 2, height));
+	}
+
+	while (!file.eof())
+	{
+		std::string line;
+		std::getline(file, line);
+		buffer += line;
+		rows++;
+	}
+
+	columns = buffer.size() / rows;
+
+	logo = new char[buffer.size() + 1];
+	strcpy(logo, buffer.c_str());
+
+	RenderLogo();
 }
 
 void ConsoleMenu::Update()
@@ -44,12 +72,12 @@ void ConsoleMenu::Update()
 	switch (choice)
 	{
 	case 119:
-		if (choice != 0)
+		if (highlight != 0)
 			highlight--;
 		break;
 
 	case 115:
-		if (choice != 2)
+		if (highlight != 2)
 			highlight++;
 		break;
 
@@ -61,7 +89,7 @@ void ConsoleMenu::Update()
 			break;
 
 		case 1:
-			mainState.setState(new ConsoleOptionsMenu(configManager, window, width, height, startWindowX, startWindowY));
+			mainState.setState(new ConsoleOptionsMenu(configManager, window, width, height, startWindowX, rows + 1));
 			break;
 
 		case 2:
@@ -84,19 +112,31 @@ void ConsoleMenu::Render()
 		if (i == highlight)
 		{
 			wattron(window, A_REVERSE);
-			mvwprintw(window, i + 1, 1, choices[i].c_str());
+			mvwprintw(window, i + 2 + rows, 1, choices[i].c_str());
 			wattroff(window, A_REVERSE);
 		}
 		else
-			mvwprintw(window, i + 1, 1, choices[i].c_str());
+			mvwprintw(window, i + 2 + rows, 1, choices[i].c_str());
 	}
 
 	wrefresh(window);
 }
 
+void ConsoleMenu::RenderLogo()
+{
+	for (unsigned int i = 0; i < rows; i++)
+	{
+		for (unsigned int j = 0; j < columns; j++)
+		{
+			mvwaddch(window, i + 1, j + 1, logo[i * columns + j]);
+			mvwaddch(window, rows + 1, j + 1, ' ');
+		}
+	}
+}
+
 void ConsoleMenu::Destroy()
 {
-
+	//delete[] logo;
 }
 
 
