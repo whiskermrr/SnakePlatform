@@ -5,12 +5,14 @@
 #include "ConsoleMap.h"
 #include "ConsoleMenu.h"
 #include "gameState.h"
+#include "DatabaseHandler.h"
 
 
 class consoleGame : public State
 {
 public:
-	consoleGame(WINDOW* window, unsigned int width, unsigned int height, unsigned int startWindowX, unsigned int startWindowY);
+	consoleGame(WINDOW* window, DatabaseHandler* databaseHandler, unsigned int width,
+		unsigned int height, unsigned int startWindowX, unsigned int startWindowY);
 	void Initiate();
 	void Update();
 	void Render();
@@ -19,11 +21,13 @@ public:
 	void setRandomPositionOfFood();
 	void printScores();
 	void showGameOver();
+	void getNickname();
 	~consoleGame();
 
 public:
 	SnakeConsole* snake;
 	WINDOW* window;
+	DatabaseHandler* databaseHandler;
 	ConsoleMap map;
 	snakeBody food;
 	unsigned int width;
@@ -31,6 +35,7 @@ public:
 	unsigned int startWindowX;
 	unsigned int startWindowY;
 	char textureFood = '@';
+	std::string nickname;
 };
 
 extern gameState mainState;

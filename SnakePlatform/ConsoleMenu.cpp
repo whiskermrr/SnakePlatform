@@ -33,9 +33,11 @@ ConsoleMenu::ConsoleMenu(unsigned int width, unsigned int height)
 void ConsoleMenu::Initiate()
 {
 	this->configManager = new ConfigManager();
-
 	configManager->setFileName("config/config.cfg");
 	configManager->loadConfigFile();
+
+	this->databaseHandler = new DatabaseHandler();
+	databaseHandler->setFileName("config/db.txt");
 
 	std::fstream file("resources/snak3_logo_2.txt");
 	rows = 0;
@@ -63,6 +65,7 @@ void ConsoleMenu::Initiate()
 	strcpy(logo, buffer.c_str());
 
 	RenderLogo();
+	RenderScoreTable();
 }
 
 void ConsoleMenu::Update()
@@ -85,7 +88,7 @@ void ConsoleMenu::Update()
 		switch (highlight)
 		{
 		case 0:
-			mainState.setState(new consoleGame(window, width, height, startWindowX, startWindowY));
+			mainState.setState(new consoleGame(window, databaseHandler, width, height, startWindowX, startWindowY));
 			break;
 
 		case 1:
@@ -117,6 +120,36 @@ void ConsoleMenu::Render()
 		}
 		else
 			mvwprintw(window, i + 2 + rows, 1, choices[i].c_str());
+	}
+
+	wrefresh(window);
+}
+
+void ConsoleMenu::RenderScoreTable()
+{
+	std::vector<std::string> records = databaseHandler->getDataFromDatabase();
+
+	std::string name =			"Name        ";
+	std::string score =			"Score       ";
+	std::string difficulty =	"Difficulty  ";
+	std::string teleports =		"Teleports";
+
+	int space = name.size();
+
+	mvwprintw(window, height / 2 - 2, width / 3, (name + score + difficulty + teleports).c_str());
+
+	for (int i = 0; i < records.size(); i++)
+	{
+		std::vector<std::string> tokens;
+		std::istringstream iss(records.at(i));
+		std::copy(std::istream_iterator<std::string>(iss),
+			std::istream_iterator<std::string>(),
+			back_inserter(tokens));
+
+		for (int j = 0; j < tokens.size(); j++)
+		{
+			mvwprintw(window, height / 2 + i, width / 3 + j * space, tokens.at(j).c_str());
+		}
 	}
 
 	wrefresh(window);

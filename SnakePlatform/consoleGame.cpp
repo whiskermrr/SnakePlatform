@@ -2,14 +2,17 @@
 
 
 
-consoleGame::consoleGame(WINDOW* window, unsigned int width, unsigned int height, unsigned int startWindowX, unsigned int startWindowY)
+consoleGame::consoleGame(WINDOW* window, DatabaseHandler* databaseHandler, unsigned int width,
+	unsigned int height, unsigned int startWindowX, unsigned int startWindowY)
 {
 	this->window = window;
+	this->databaseHandler = databaseHandler;
 	this->width = width;
 	this->startWindowX = startWindowX;
 	this->startWindowY = startWindowY;
 	this->height = height;
 	wclear(window);
+	wrefresh(window);
 	srand(time(NULL));
 
 	
@@ -17,6 +20,8 @@ consoleGame::consoleGame(WINDOW* window, unsigned int width, unsigned int height
 
 void consoleGame::Initiate()
 {
+	nickname = "none";
+	getNickname();
 	snake = new SnakeConsole(window, width, height);
 	map.Render(window, width, height, startWindowX, startWindowY);
 	setRandomPositionOfFood();
@@ -53,6 +58,8 @@ void consoleGame::Render()
 void consoleGame::Destroy()
 {
 	delete snake;
+	delete databaseHandler;
+	databaseHandler = NULL;
 	snake = NULL;
 	//delwin(window);
 	endwin();
@@ -76,6 +83,32 @@ void consoleGame::printScores()
 	refresh();
 }
 
+void consoleGame::getNickname()
+{
+	nodelay(window, true);
+	std::string tmpNickname = "";
+	std::string line = "Nickname: ";
+	mvwprintw(window, height / 2, width / 2 - line.size(), line.c_str());
+	wrefresh(window);
+
+	char c = getch();
+	tmpNickname += c;
+
+	while (c != 10)
+	{
+		mvwprintw(window, height / 2, width / 2 + line.size(), tmpNickname.c_str());
+		wrefresh(window);
+		c = getch();
+		if(c != '\n')
+			tmpNickname += c;
+	}
+
+	nickname = tmpNickname;
+	wclear(window);
+	nodelay(window, true);
+	wrefresh(window);
+}
+
 void consoleGame::showGameOver()
 {
 	init_pair(1, COLOR_GREEN, COLOR_BLACK);
@@ -88,7 +121,14 @@ void consoleGame::showGameOver()
 	Sleep(1000);
 	flushinp();
 	halfdelay(100);
+	if (!databaseHandler->addRecordToDatabase(nickname, globalDifficulty, isTeleportsOn, snake->getScores()))
+	{
+		std::string error = "Error saving scores to database.";
+		wclear(window);
+		mvwprintw(window, height / 2, width / 2 - error.size() / 2, error.c_str());
+	}
 	getch();
+	
 	endwin();
 	mainState.setState(new ConsoleMenu(width / 2, height));
 }

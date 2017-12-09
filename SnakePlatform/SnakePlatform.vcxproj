@@ -135,6 +135,7 @@
     <ClCompile Include="ConsoleMap.cpp" />
     <ClCompile Include="ConsoleMenu.cpp" />
     <ClCompile Include="ConsoleOptionsMenu.cpp" />
+    <ClCompile Include="DatabaseHandler.cpp" />
     <ClCompile Include="Food.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainGame.cpp" />
@@ -153,6 +154,7 @@
     <ClInclude Include="ConsoleMap.h" />
     <ClInclude Include="ConsoleMenu.h" />
     <ClInclude Include="ConsoleOptionsMenu.h" />
+    <ClInclude Include="DatabaseHandler.h" />
     <ClInclude Include="Food.h" />
     <ClInclude Include="gameState.h" />
     <ClInclude Include="mainGame.h" />

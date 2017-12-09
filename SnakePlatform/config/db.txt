@@ -1,0 +1,3 @@
+whisker 3 NORMAL ON
+whisker 2 NORMAL ON
+wiktor12 1 NORMAL ON

@@ -31,6 +31,12 @@
     <Filter Include="Source Files\states">
       <UniqueIdentifier>{2d526377-ef4b-4ca5-ad12-b70efd81e2cc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\handlers">
+      <UniqueIdentifier>{855cb0c7-ab03-4343-9fc0-c021c317522c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\handlers">
+      <UniqueIdentifier>{3aae54e4-ca64-49b3-9a4c-447d328292a8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -50,9 +56,6 @@
     </ClCompile>
     <ClCompile Include="mainGame.cpp">
       <Filter>Source Files\states</Filter>
-    </ClCompile>
-    <ClCompile Include="ConfigManager.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="VertexMap.cpp">
       <Filter>Source Files\entities</Filter>
@@ -81,6 +84,12 @@
     <ClCompile Include="ConsoleOptionsMenu.cpp">
       <Filter>Source Files\menu</Filter>
     </ClCompile>
+    <ClCompile Include="ConfigManager.cpp">
+      <Filter>Source Files\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="DatabaseHandler.cpp">
+      <Filter>Source Files\handlers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainMenu.h">
@@ -103,9 +112,6 @@
     </ClInclude>
     <ClInclude Include="OptionsMenu.h">
       <Filter>Header Files\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="ConfigManager.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="VertexMap.h">
       <Filter>Header Files\entities</Filter>
@@ -133,6 +139,12 @@
     </ClInclude>
     <ClInclude Include="ConsoleOptionsMenu.h">
       <Filter>Header Files\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigManager.h">
+      <Filter>Header Files\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="DatabaseHandler.h">
+      <Filter>Header Files\handlers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

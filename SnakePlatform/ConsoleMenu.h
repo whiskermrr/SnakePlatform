@@ -1,10 +1,15 @@
 #pragma once
 #include <curses.h>
+#include <sstream>
+#include <iomanip>
+#include <algorithm>
+#include <iterator>
 #include "state.h"
 #include "ConfigManager.h"
 #include "consoleGame.h"
 #include "gameState.h"
 #include "ConsoleOptionsMenu.h"
+#include "DatabaseHandler.h"
 
 
 class ConsoleMenu : public State
@@ -16,11 +21,13 @@ public:
 	void Render();
 	void Destroy();
 	void RenderLogo();
+	void RenderScoreTable();
 	~ConsoleMenu();
 
 public:
 	WINDOW* window;
 	ConfigManager* configManager;
+	DatabaseHandler* databaseHandler;
 
 	std::string choices[3] = { "Play", "Options", "Exit" };
 	int highlight = 0;
